@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+</head>
+<body>
+	<img class="wave" src="img/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="img/bg.svg">
+		</div>
+		<div class="login-content">
+			<form action="#">
+				<img src="img/avatar.svg">
+				<h2 class="title">Welcome</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Username</h5>
+           		   		<input type="text" class="input" id="login-username">
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Password</h5>
+           		    	<input type="password" class="input" id="login-password">
+            	   </div>
+            	</div>
+            	<a href="#">Forgot Password?</a>
+            	<input type="submit" class="btn" value="Login" id="login-submit">
+            </form>
+        </div>
+	</div>
+	  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBFvBI_6Ut16zi3pky-RhBv14rQav-jeE0",
+    authDomain: "sems-6bf88.firebaseapp.com",
+    databaseURL: "https://sems-6bf88.firebaseio.com",
+    projectId: "sems-6bf88",
+    storageBucket: "sems-6bf88.appspot.com",
+    messagingSenderId: "522766602043",
+    appId: "1:522766602043:web:24423f7d5f6a05fe1a311e",
+    measurementId: "G-7R8XMZPGPR"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+</script>
+<script type="text/javascript" src="js/login.js"></script>
+<script>
+const login_username = document.querySelector('#login-username');
+const login_password = document.querySelector('#login-password');
+const login = document.querySelector('#login-submit');
+console.log("djdjc");
+
+login.addEventListener('click', (e) => {
+	e.preventDefault();
+	
+	console.log("Button clicked");
+
+    auth.signInWithEmailAndPassword(login_username.value, login_password.value).then(cred => {
+        console.log("Login Successful");
+    }).catch(err =>{
+		console.log("Unsuccessfull");
+	});
+
+
+	// firebase.auth().signInWithEmailAndPassword(login_password.value, login_password.value).catch(function(error) {
+	// 	console.log("9999999999")
+	//   var errorCode = error.code;
+	//   console.log(error.code);
+	//   var errorMessage = error.message;
+	//   console.log(error.message);
+	// });
+
+
+	firebase.auth().onAuthStateChanged(function(user) {
+		if (user) {
+			// User is signed in.
+			 console.log("Signed IN");
+			window.open('index.html');
+		} else {
+			console.log("NONONONO");
+			// User is signed out.
+			// ...
+		}
+	});
+
+
+});
+
+
+
+</script>
+</body>
+</html>
