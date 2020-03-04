@@ -5,6 +5,13 @@
 	<link rel="stylesheet" type="text/css" href="css/login.css">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+
+<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+<script src="bower_components/firebaseui/dist/firebaseui.js"></script>
+<link type="text/css" rel="stylesheet" href="bower_components/firebaseui/dist/firebaseui.css" />
+
 </head>
 <body>
 	<img class="wave" src="img/wave.png">
@@ -13,7 +20,7 @@
 			<img src="img/bg.svg">
 		</div>
 		<div class="login-content">
-			<form action="#">
+			<form action="#" id="form">
 				<img src="img/avatar.svg">
 				<h2 class="title">Sign-Up</h2>
            		<div class="input-div one">
@@ -43,7 +50,7 @@
 						 <input type="number" class="input" id="roll">
 				 </div>
 			  </div>
-            	<input type="submit" class="btn" value="Sign-Up">
+            	<input type="submit" class="btn" value="Sign-Up" id="sign-up">
 			</form>
 			<div class="message">
 				<span id="mess"></span>
@@ -51,33 +58,42 @@
         </div>
 	</div>
 
-	  <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-firestore.js"></script>
 
 <script>
+
+// var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+// ui.start('#firebaseui-auth-container', {
+//   signInOptions: [
+//     firebase.auth.EmailAuthProvider.PROVIDER_ID
+//   ],
+//   // Other config options...
+// });
+
   // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyBFvBI_6Ut16zi3pky-RhBv14rQav-jeE0",
-    authDomain: "sems-6bf88.firebaseapp.com",
-    databaseURL: "https://sems-6bf88.firebaseio.com",
-    projectId: "sems-6bf88",
-    storageBucket: "sems-6bf88.appspot.com",
-    messagingSenderId: "522766602043",
-    appId: "1:522766602043:web:24423f7d5f6a05fe1a311e",
-    measurementId: "G-7R8XMZPGPR"
+    apiKey: "AIzaSyDI6x9YPQi29j2_MG6Ois7c_uWjWUHftQI",
+    authDomain: "sems-4fbdd.firebaseapp.com",
+    databaseURL: "https://sems-4fbdd.firebaseio.com",
+    projectId: "sems-4fbdd",
+    storageBucket: "sems-4fbdd.appspot.com",
+    messagingSenderId: "522454557418",
+    appId: "1:522454557418:web:b7c652e7764b4299a6ed93"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
   const auth = firebase.auth();
   const db = firebase.firestore();
+
+  
 </script>
+
 <script type="text/javascript" src="js/auth.js"></script>
 <script src="js/login.js"></script>
 
