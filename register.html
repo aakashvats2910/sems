@@ -6,12 +6,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 
-<script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-
-<script src="bower_components/firebaseui/dist/firebaseui.js"></script>
-<link type="text/css" rel="stylesheet" href="bower_components/firebaseui/dist/firebaseui.css" />
-
 </head>
 <body>
 	<img class="wave" src="img/wave.png">
@@ -67,15 +61,6 @@
 
 <script>
 
-// var ui = new firebaseui.auth.AuthUI(firebase.auth());
-
-// ui.start('#firebaseui-auth-container', {
-//   signInOptions: [
-//     firebase.auth.EmailAuthProvider.PROVIDER_ID
-//   ],
-//   // Other config options...
-// });
-
   // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyDI6x9YPQi29j2_MG6Ois7c_uWjWUHftQI",
@@ -86,11 +71,11 @@
     messagingSenderId: "522454557418",
     appId: "1:522454557418:web:b7c652e7764b4299a6ed93"
   };
+  
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   const auth = firebase.auth();
   const db = firebase.firestore();
-
   
 </script>
 

@@ -7,9 +7,6 @@ const form = document.querySelector('#form');
 			const roll = document.querySelector('#roll');
 			const mess = document.querySelector('#mess');
 
-			var firebase = require('firebase');
-var firebaseui = require('firebaseui');
-
 			auth.createUserWithEmailAndPassword(username.value, pass.value).then(c => {
 				
 				db.collection("students").doc(c.user.uid).set({

@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Phone OTP Testing</title>
+    </head>
+    <body>
+        <form>
+            <div id="recaptcha-container"></div>
+            <input type="text" id="verificationCode" placeholder="Enter Verification Code">
+        </form>
+    </body>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-firestore.js"></script>
+
+<script>
+
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDI6x9YPQi29j2_MG6Ois7c_uWjWUHftQI",
+    authDomain: "sems-4fbdd.firebaseapp.com",
+    databaseURL: "https://sems-4fbdd.firebaseio.com",
+    projectId: "sems-4fbdd",
+    storageBucket: "sems-4fbdd.appspot.com",
+    messagingSenderId: "522454557418",
+    appId: "1:522454557418:web:b7c652e7764b4299a6ed93"
+  };
+  
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+  
+</script>
+
+<script>
+    db.collection("admin").doc("uniqueidhere1").set({
+        name: "admin",
+        phoneNumber: "987654321",
+    })
+
+    // The otp area is the below one.
+    // The 'recaptcha-container is a <div> tag which is used for recaptcha (Recaptcha is mandatory)'
+    // The phone number is hard coded in this.
+    // Number is in the format : +91 (Number)
+
+    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+
+    // No space between the country code and the number.
+    var phoneNumber = "+917494970025";
+    var appVerifier = window.recaptchaVerifier;
+
+    firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
+        .then(function (confirmationResult) {
+            console.log("SMS SENT! HUrray!");
+        // SMS sent. Prompt user to type the code from the message, then sign the
+        // user in with confirmationResult.confirm(code).
+        window.confirmationResult = confirmationResult;
+        }).catch(function (error) {
+            console.log("======");
+            console.log(error.message);
+        // Error; SMS not sent
+        // ...
+        });
+
+
+
+</script>
+
+</html>
