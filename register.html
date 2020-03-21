@@ -5,7 +5,6 @@
 	<link rel="stylesheet" type="text/css" href="css/login.css">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
-
 </head>
 <body>
 	<img class="wave" src="img/wave.png">
@@ -44,17 +43,24 @@
 						 <input type="number" class="input" id="roll">
 				 </div>
 			  </div>
+
+			  <div class="input-div pass">
+				<div class="i"> 
+					 <i class="fas fa-lock"></i>
+				</div>
+				<div class="div">
+					 <h5>Mobile Number</h5>
+					 <input type="number" class="input" id="mobile">
+			 </div>
+		  </div>
+			  
             	<input type="submit" class="btn" value="Sign-Up" id="sign-up">
-			</form>
-			<div class="message">
-				<span id="mess"></span>
-			</div>
+            </form>
         </div>
-	</div>
+    </div>
+	
 
-
-
-<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-firestore.js"></script>
@@ -81,6 +87,7 @@
 
 <script type="text/javascript" src="js/auth.js"></script>
 <script src="js/login.js"></script>
+
 
 </body>
 </html>
