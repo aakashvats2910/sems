@@ -4,7 +4,7 @@
     </head>
     <body>
         <form>
-            <div id="recaptcha-container"></div>
+            <div id="recaptcha-container-test"></div>
             <input type="text" id="verificationCode" placeholder="Enter Verification Code">
         </form>
     </body>
@@ -45,10 +45,10 @@
     // The phone number is hard coded in this.
     // Number is in the format : +91 (Number)
 
-    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container-test');
 
     // No space between the country code and the number.
-    var phoneNumber = "+917494970025";
+    var phoneNumber = "+918168926684";
     var appVerifier = window.recaptchaVerifier;
 
     firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)

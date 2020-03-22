@@ -1,73 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Register Page</title>
+	<title>OTP Page</title>
 	<link rel="stylesheet" type="text/css" href="css/login.css">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 </head>
 <body>
-	
 	<img class="wave" src="img/wave.png">
 	<div class="container">
 		<div class="img">
 			<img src="img/bg.svg">
 		</div>
 		<div class="login-content">
-			<form action="#" id="form">
-	
+			<form action="#">
 				<img src="img/avatar.svg">
-				<h2 class="title">Sign-Up</h2>
+				<h2 class="title">OTP Verification</h2>
            		<div class="input-div one">
-           		   <div class="i">
-           		   		<i class="fas fa-user"></i>
-           		   </div>
-           		   <div class="div">
-           		   		<h5>E-Mail</h5>
-           		   		<input type="text" class="input" id="username">
-           		   </div>
+           		  
+           		   
            		</div>
            		<div class="input-div pass">
            		   <div class="i"> 
            		    	<i class="fas fa-lock"></i>
            		   </div>
            		   <div class="div">
-           		    	<h5>Password</h5>
-           		    	<input type="password" class="input" id="pass">
+           		    	<h5>OTP Code</h5>
+           		    	<input type="password" class="input">
             	   </div>
-				</div>
-
-				<div class="input-div pass">
-					<div class="i"> 
-						 <i class="fas fa-lock"></i>
-					</div>
-					<div class="div">
-						 <h5>Roll Number</h5>
-						 <input type="number" class="input" id="roll">
-				 </div>
-			  </div>
-
-			  <div class="input-div pass">
-				<div class="i"> 
-					 <i class="fas fa-lock"></i>
-				</div>
-				<div class="div">
-					 <h5>Mobile Number</h5>
-					 <input type="number" class="input" id="mobile">
-			 </div>
-				  </div>
-				  
-
-				<input type="submit" class="btn" value="Sign-Up" id="sign-up">
-				
-				<div id="recaptcha-container-new"></div>
-
+            	</div>
+            	<a href="#">Resend OTP</a>
+            	<input type="submit" class="btn" value="Verify" id="verify-button">
             </form>
         </div>
-	</div>
+    </div>
+	<script type="text/javascript" src="js/login.js"></script>
 
-
-	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	    <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-firestore.js"></script>
@@ -89,17 +58,13 @@
   firebase.initializeApp(firebaseConfig);
   const auth = firebase.auth();
   const db = firebase.firestore();
-  
+
+  console.log(sessionStorage.getItem('username_m'));
+  console.log(sessionStorage.getItem('roll_m'));
+  console.log(sessionStorage.getItem('pass_m'));
+  console.log(sessionStorage.getItem('mobile_m'));
+
 </script>
-
-<script>
-	
-	console.log('lllklk')
-</script>
-
-<script type="text/javascript" src="js/auth.js"></script>
-<script src="js/login.js"></script>
-
 
 </body>
 </html>
