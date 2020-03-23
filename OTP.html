@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>OTP Page</title>
 	<link rel="stylesheet" type="text/css" href="css/login.css">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 </head>
+
 <body>
 	<img class="wave" src="img/wave.png">
 	<div class="container">
@@ -16,55 +18,75 @@
 			<form action="#">
 				<img src="img/avatar.svg">
 				<h2 class="title">OTP Verification</h2>
-           		<div class="input-div one">
-           		  
-           		   
-           		</div>
-           		<div class="input-div pass">
-           		   <div class="i"> 
-           		    	<i class="fas fa-lock"></i>
-           		   </div>
-           		   <div class="div">
-           		    	<h5>OTP Code</h5>
-           		    	<input type="password" class="input">
-            	   </div>
-            	</div>
-            	<a href="#">Resend OTP</a>
-            	<input type="submit" class="btn" value="Verify" id="verify-button">
-            </form>
-        </div>
-    </div>
+				<div class="input-div one">
+				</div>
+				<div class="input-div pass">
+					<div class="i">
+						<i class="fas fa-lock"></i>
+					</div>
+					<div class="div">
+						<h5>OTP Code</h5>
+						<input type="text" class="input" id="otp-field">
+					</div>
+				</div>
+				<a href="#">Resend OTP</a>
+				<input type="button" class="btn" value="Verify" id="verify-otp-button">
+			</form>
+		</div>
+	</div>
 	<script type="text/javascript" src="js/login.js"></script>
 
-	    <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-firestore.js"></script>
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-firestore.js"></script>
 
-<script>
+	<script>
 
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyDI6x9YPQi29j2_MG6Ois7c_uWjWUHftQI",
-    authDomain: "sems-4fbdd.firebaseapp.com",
-    databaseURL: "https://sems-4fbdd.firebaseio.com",
-    projectId: "sems-4fbdd",
-    storageBucket: "sems-4fbdd.appspot.com",
-    messagingSenderId: "522454557418",
-    appId: "1:522454557418:web:b7c652e7764b4299a6ed93"
-  };
-  
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  const auth = firebase.auth();
-  const db = firebase.firestore();
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyDI6x9YPQi29j2_MG6Ois7c_uWjWUHftQI",
+			authDomain: "sems-4fbdd.firebaseapp.com",
+			databaseURL: "https://sems-4fbdd.firebaseio.com",
+			projectId: "sems-4fbdd",
+			storageBucket: "sems-4fbdd.appspot.com",
+			messagingSenderId: "522454557418",
+			appId: "1:522454557418:web:b7c652e7764b4299a6ed93"
+		};
 
-  console.log(sessionStorage.getItem('username_m'));
-  console.log(sessionStorage.getItem('roll_m'));
-  console.log(sessionStorage.getItem('pass_m'));
-  console.log(sessionStorage.getItem('mobile_m'));
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		const auth = firebase.auth();
+		const db = firebase.firestore();
 
-</script>
+		console.log(sessionStorage.getItem('username_m'));
+		console.log(sessionStorage.getItem('roll_m'));
+		console.log(sessionStorage.getItem('pass_m'));
+		console.log(sessionStorage.getItem('mobile_m'));
+
+		const confirmationResult = sessionStorage.getItem('confirmation_result');
+
+		console.log(confirmationResult);
+		console.log(confirmationResult.confirm);
+
+		const otpField = document.querySelector('#otp-field');
+		const verifyOTPButton = document.querySelector('#verify-otp-button');
+		verifyOTPButton.addEventListener('click', (e) => {
+			var OTP = otpField.value;
+			confirmationResult(OTP).then(function (result) {
+				// User signed in successfully.
+				var user = result.user;
+				console.log('OTP VERIFIED SUCCESSFULLY')
+				// ...
+			}).catch(function (error) {
+				console.log('SOMETHING BAD! : ' + error.message);
+				// User couldn't sign in (bad verification code?)
+				// ...
+			});
+		});
+
+	</script>
 
 </body>
+
 </html>
