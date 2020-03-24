@@ -40,8 +40,3 @@ function getBasicData(id) {
         }
     });
 }
-
-log_out_button.addEventListener('click', (e) => {
-    console.log('clicked');
-});
-
