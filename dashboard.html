@@ -134,7 +134,7 @@
                   <img alt="Image placeholder" src="./assets/img/theme/neelam.jpeg">
                 </span>
                 <div class="media-body ml-2 d-none d-lg-block">
-                  <span class="mb-0 text-sm  font-weight-bold">Neelam Oberoi</span>
+                  <span class="mb-0 text-sm  font-weight-bold" id="admin-name">Neelam Oberoi</span>
                 </div>
               </div>
             </a>
@@ -274,12 +274,32 @@
   <script src="./assets/js/plugins/chart.js/dist/Chart.min.js"></script>
   <script src="./assets/js/plugins/chart.js/dist/Chart.extension.js"></script>
 
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-firestore.js"></script>
+
   <script>
-    const students_field = document.querySelector('#students-registered');
-    const teacher_field = document.querySelector('#teacher-available');
-    const ongoing_field = document.querySelector('ongoing-events');
-    
+
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDI6x9YPQi29j2_MG6Ois7c_uWjWUHftQI",
+      authDomain: "sems-4fbdd.firebaseapp.com",
+      databaseURL: "https://sems-4fbdd.firebaseio.com",
+      projectId: "sems-4fbdd",
+      storageBucket: "sems-4fbdd.appspot.com",
+      messagingSenderId: "522454557418",
+      appId: "1:522454557418:web:b7c652e7764b4299a6ed93"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
   </script>
+
+  <script src="js/dashboard.js"></script>
 
 </body>
 

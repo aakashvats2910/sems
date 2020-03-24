@@ -73,42 +73,38 @@
 
 		login.addEventListener('click', (e) => {
 			e.preventDefault();
-
 			console.log("Button clicked");
 
-				auth.signInWithEmailAndPassword(login_username.value, login_password.value).then(cred => {
-					console.log("Login Successful");
-					// window.open('dashboard.html','_self');
-				}).catch(err => {
-					console.log("Unsuccessfull");
+			// Asking the credentails for the user sign in and then
+			// signing in the user.
+			auth.signInWithEmailAndPassword(login_username.value, login_password.value).then(cred => {
+				console.log("Login Successful");
+
+				sessionStorage.setItem('uid',cred.user.uid);
+
+				db.collection('staticdata').doc('Y2Jb231xdez5eLcEFLKt').get().then(function(doc) {
+					if (doc.exists) {
+						console.log('Data');
+						var static = doc.data();
+						console.log(doc.data());
+						console.log(static.ONGOING_EVENTS);
+						sessionStorage.setItem('static_items',static);
+						
+					} else {
+						console.log('Nothing found!');
+					}
+				}).catch(function(error) {
+					console.log('Error :: ' + error.message);
 				});
 
+				window.open('dashboard.html','_self');
 
-			// firebase.auth().signInWithEmailAndPassword(login_password.value, login_password.value).catch(function(error) {
-			// 	console.log("9999999999")
-			//   var errorCode = error.code;
-			//   console.log(error.code);
-			//   var errorMessage = error.message;
-			//   console.log(error.message);
-			// });
-
-
-			firebase.auth().onAuthStateChanged(function (user) {
-				if (user) {
-					// User is signed in.
-					console.log("Signed IN");
-					
-
-				} else {
-					console.log("NONONONO");
-					// User is signed out.
-					// ...
-				}
+				
+			}).catch(err => {
+				console.log("Unsuccessfull");
 			});
 
-
 		});
-
 
 
 	</script>
