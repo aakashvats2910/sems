@@ -2,24 +2,66 @@ const students_field = document.querySelector('#students-registered');
 const teacher_field = document.querySelector('#teacher-available');
 const ongoing_field = document.querySelector('#ongoing-events');
 const admin_name = document.querySelector('#admin-name');
+const event_submit_button = document.querySelector('#event-submit-button');
+const log_out_button = document.querySelector('#log-out-button');
 
-const log_out_button = document.querySelector('#log-out');
+const event_name_field = document.querySelector('#event-name-field');
+const description_field = document.querySelector('#description-field');
+const rules_regulations_field = document.querySelector('#rules-regulation-field');
+const prize_field = document.querySelector('#prize-field');
+const teachers_assigned_field = document.querySelector('#teachers-assigned-field');
 
-const adminId = sessionStorage.getItem('uid');
+const right_log_out = document.querySelector('#right-log-out');
+
+// Getting the UID of the admin from the firebase firestore.
+console.log(sessionStorage.getItem('uid'));
 
 // To be deployed in final version.
 // To close the window if the user is not valid!
 // If the user opens the file directly this will block the access.
 // It will close the file immediatly showing an Alert/Error!
-if (adminId == null) {
+
+if (sessionStorage.getItem('uid') == null) {
+    console.log('REACHED!!!!!');
     window.alert('No Legitimate User found!');
-    window.close();
+    window.open('login.html', '_self');
 }
 
-getBasicData(adminId);
+// Initiate the dashboard with the basic data.
+getBasicData(sessionStorage.getItem('uid'));
 
-function getBasicData(id) {
-    db.collection('staticdata').doc('Y2Jb231xdez5eLcEFLKt').get().then(function(doc) {
+event_submit_button.addEventListener('click', (e) => {
+    console.log('EVENT SUBMIT BUTTON');
+    registerEvent(event_name_field.value, description_field.value,
+        rules_regulations_field.value, prize_field.value, teachers_assigned_field.value);
+});
+
+log_out_button.addEventListener('click', (e) => {
+    logOut();
+});
+
+right_log_out.addEventListener('click', (e) => {
+    console.log('LOg ouT');
+});
+
+function getBasicData(id) { 
+    // ,------.,--.,------. ,------.    ,--.   ,--. ,-----. ,------. ,--. ,--. ,---.   
+    // |  .---'|  ||  .--. '|  .---'    |  |   |  |'  .-.  '|  .--. '|  .'   /'   .-'  
+    // |  `--, |  ||  '--'.'|  `--,     |  |.'.|  ||  | |  ||  '--'.'|  .   ' `.  `-.  
+    // |  |`   |  ||  |\  \ |  `---.    |   ,'.   |'  '-'  '|  |\  \ |  |\   \.-'    | 
+    // `--'    `--'`--' '--'`------'    '--'   '--' `-----' `--' '--'`--' '--'`-----'  
+                                                                                
+    db.collection('admin').doc(id).get().then(function (doc) {
+        if (doc.exists) {
+            var adminData = doc.data();
+            admin_name.innerText = adminData.NAME;
+        } else {
+            console.log('Unable to get data!');
+            window.alert('No legitimate User found!');
+            window.open('login.html','_self');
+        }
+    });
+    db.collection('staticdata').doc('Y2Jb231xdez5eLcEFLKt').get().then(function (doc) {
         if (doc.exists) {
             var staticData = doc.data();
             students_field.innerText = staticData.STUDENTS_REGISTERED;
@@ -28,15 +70,59 @@ function getBasicData(id) {
         } else {
             console.log('Nothing found!');
         }
-    }).catch(function(error) {
+    }).catch(function (error) {
         console.log('Error :: ' + error.message);
     });
-    db.collection('admin').doc(id).get().then(function(doc) {
-        if (doc.exists) {
-            var adminData = doc.data();
-            admin_name.innerText = adminData.NAME;
-        } else {
-            console.log('Unable to get data!');
-        }
+}
+
+// Under development.
+function registerEvent(eventsName, description, rulesRegulations, prizes, teachersAssigned) {
+    db.collection('events').add({
+        EVENT_NAME: eventsName,
+        DESCRIPTION: description,
+        RULES_REGULATIONS: rulesRegulations,
+        PRIZES: prizes,
+        TEACHERS_ASSIGNED: teachersAssigned
+    }).then(ref => {
+        console.log('Auto ID : ' + ref.id);
+        window.alert('Event Registered!');
+    }).catch(function(error) {
+        console.log('Unwated error :: ' + error.message);
     });
 }
+
+function logOut() {
+    firebase.auth().signOut().then(function () {
+        console.log('signed_out-successfully');
+    }).then(function() {
+        sessionStorage.setItem('uid', null);
+        window.open('login.html','_self');
+    }).catch(function (error) {
+        console.log('===== : ' + error.message);
+    });
+}
+
+//      
+//     ,od88888bo.
+//   ,d88888888888b
+//  ,dP""'   `"Y888b       ,.
+//  d'         `"Y88b     .d8b. ,
+//  '            `Y88[  , `Y8P' db
+//                `88b  Ybo,`',d88)
+//                 ]88[ `Y888888P"
+//                ,888)  `Y8888P'
+//               ,d888[    `""'
+//            .od8888P          ...
+//       ..od88888888bo,      .d888b
+//            `""Y888888bo. .d888888b
+//  .             `Y88b"Y88888P"' `Y8b
+//  :.             `Y88[ `"""'     `88[
+//  |b              |88b            Y8b.
+//  `8[             :888[ ,         :88)
+//   Yb             :888) `b.       d8P'
+//   `8b.          ,d888[  `Ybo.  .d88[
+//    Y8b.        .dWARP'   `Y8888888P
+//    `Y88bo.  .od8888P'      "YWARP'
+//     `"Y8888888888P"'         `"'
+//        `"Y8888P""'
+//           `""'    
