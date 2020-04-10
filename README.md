@@ -8,7 +8,9 @@ The backend used is the Firebase Backend as a Service (BAAS) (Serverless) for th
 
 The project is being kept Open Source to anyone who liked this and can change anything after they have pulled or cloned their own copy of this project and can run this on their own server.
 
-The current version of the web-app being : [![Generic badge](https://img.shields.io/badge/Version-1.0-Red.svg)](https://shields.io/)
+The current version of the web-app being : [![Generic badge](https://img.shields.io/badge/Version-1.1.0-Green.svg)](https://shields.io/)
+
+[![Generic badge](https://img.shields.io/badge/Build%20Stage-Alpha-Yellow.svg)](https://shields.io/)
 
 The web-app is hosted at: https://sems-4fbdd.web.app/
 
