@@ -8,7 +8,7 @@ The backend used is the Firebase Backend as a Service (BAAS) (Serverless) for th
 
 The project is being kept Open Source to anyone who liked this and can change anything after they have pulled or cloned their own copy of this project and can run this on their own server.
 
-The current version of the web-app being : [![Version]](1.0.1)
+The current version of the web-app being : [![GitHub Package Registry version](https://img.shields.io/github/release/github/learning-lab-components.svg?label=GPR&logo=github)](https://github.com/github/learning-lab-components/packages/11396)
 
 The web-app is hosted at: https://sems-4fbdd.web.app/
 
