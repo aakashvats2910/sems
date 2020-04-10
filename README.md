@@ -18,7 +18,7 @@ The current version of the web-app being : [![Generic badge](https://img.shields
 
 The web-app is hosted at: https://sems-4fbdd.web.app/
 
-[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://firebase.google.com/)
 
 <h3>Kindly visit the web-app page and enjoy.</h3>
 
