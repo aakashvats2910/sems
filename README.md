@@ -18,7 +18,7 @@ The current version of the web-app being : [![Generic badge](https://img.shields
 
 The web-app is hosted at: https://sems-4fbdd.web.app/
 
-[![forthebadge](https://forthebadge.com/images/badges/powered-by-electricity.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/powered-by-firebase.svg)](https://forthebadge.com)
 
 <h3>Kindly visit the web-app page and enjoy.</h3>
 
@@ -28,4 +28,4 @@ For feedback contact semsmmu@gmail.com or aakashvats2910@gmail.com
 
 Please report if any bug found or for any suggestion. We are here to help you.
 
-<img src="images/featured/featured-built-with-love.svg"/>
+<img src="images/featured/featured-built-with-love.svg">
