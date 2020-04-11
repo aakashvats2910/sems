@@ -24,6 +24,8 @@ The web-app is hosted at: https://sems-4fbdd.web.app/
 
 For feedback contact semsmmu@gmail.com or aakashvats2910@gmail.com
 
-[![Ask Me Anything !](https://img.shields.io/badge/Assk%20me-anything-1abc9c.svg)](https://GitHub.com/Naereen/ama)
+[![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/Naereen/ama)
 
 Please report if any bug found or for any suggestion. We are here to help you.
+
+<img src="images/featured/featured-built-with-love.svg"/>
