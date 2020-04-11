@@ -18,7 +18,7 @@ The current version of the web-app being : [![Generic badge](https://img.shields
 
 The web-app is hosted at: https://sems-4fbdd.web.app/
 
-[![forthebadge](https://forthebadge.com/images/badges/powered-by-firebase.svg)](https://forthebadge.com)
+[![GitHub contributors](https://img.shields.io/github/contributors/Naereen/StrapDown.js.svg)](https://github.com/aakashvats2910/sems/graphs/contributors/)
 
 <h3>Kindly visit the web-app page and enjoy.</h3>
 
