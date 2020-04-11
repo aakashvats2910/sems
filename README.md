@@ -16,7 +16,9 @@ The current version of the web-app being : [![Generic badge](https://img.shields
 
 [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://shields.io/)
 
+<h4>
 The web-app is hosted at: https://sems-4fbdd.web.app/
+  </h4>
 
 [![GitHub contributors](https://img.shields.io/github/contributors/Naereen/StrapDown.js.svg)](https://github.com/aakashvats2910/sems/graphs/contributors/)
 
