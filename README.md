@@ -14,7 +14,7 @@ The current version of the web-app being : [![Generic badge](https://img.shields
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 
-[![GitHub watchers](https://img.shields.io/github/watchers/?style=for-the-badge&logo=appveyor)](https://github.com/aakashvats2910/sems/watchers)
+[![GitHub watchers](https://img.shields.io/github/watchers/Naereen/StrapDown.js.svg?style=social&label=Watch&maxAge=2592000)](https://github.com/aakashvats2910/sems/watchers/)
 
 [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://shields.io/)
 
