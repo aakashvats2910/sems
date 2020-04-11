@@ -14,8 +14,6 @@ The current version of the web-app being : [![Generic badge](https://img.shields
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 
-[![GitHub watchers](https://img.shields.io/github/watchers/Naereen/StrapDown.js.svg?style=social&label=Watch&maxAge=2592000)](https://github.com/aakashvats2910/sems/watchers/)
-
 [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://shields.io/)
 
 The web-app is hosted at: https://sems-4fbdd.web.app/
@@ -29,5 +27,3 @@ For feedback contact semsmmu@gmail.com or aakashvats2910@gmail.com
 [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/Naereen/ama)
 
 Please report if any bug found or for any suggestion. We are here to help you.
-
-<img src="images/featured/featured-built-with-love.svg">
