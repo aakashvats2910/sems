@@ -46,7 +46,7 @@ log_out_button.addEventListener('click', (e) => {
 });
 
 right_log_out.addEventListener('click', (e) => {
-    console.log('LOg ouT');
+    console.log('Log ouT');
 });
 
 // ,------.,--.,------. ,------.    ,--.   ,--. ,-----. ,------. ,--. ,--. ,---.   
@@ -128,7 +128,7 @@ function initiateEvents() {
     db.collection("events").get().then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
             var abc = doc.data();
-            addToEventsList(abc.EVENT_NAME);
+            addToEventsList(abc.EVENT_NAME + " - " + doc.id);
         })
     });
 }
@@ -137,13 +137,27 @@ function addToEventsList(item_) {
     var node = document.createElement('li');
     var textNode = document.createTextNode(item_);
     var a = document.createElement('a');
-    a.setAttribute('href', 'https://www.google.com');
+    // a.setAttribute('href', 'Cricket.html');
     a.appendChild(textNode);
     node.appendChild(a);
+
+    node.addEventListener('click', (e) => {
+        console.log(cropToGetDocumentId(node.innerText));
+        sessionStorage.setItem('event_clicked', cropToGetDocumentId(node.innerText));
+        window.open('Cricket.html', '_self');
+    });
+
     events_list_field.appendChild(node);
 }
 
-// _______ _                     _                                    _       _   _     _                           _                      _ 
+function cropToGetDocumentId(x) {
+    var index = x.indexOf('-');
+    return x.substring(index+2, x.length);
+}
+
+
+
+//  _______ _                     _                                    _       _   _     _                           _                      _ 
 // |__   __| |                   (_)                                  | |     | | | |   (_)                         | |                    | |
 //    | |  | |__   ___ _ __ ___   _ ___   _ __   ___    ___ _   _  ___| |__   | |_| |__  _ _ __   __ _    __ _ ___  | |__   ___  _ __   ___| |
 //    | |  | '_ \ / _ \ '__/ _ \ | / __| | '_ \ / _ \  / __| | | |/ __| '_ \  | __| '_ \| | '_ \ / _` |  / _` / __| | '_ \ / _ \| '_ \ / _ \ |
