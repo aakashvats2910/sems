@@ -141,6 +141,8 @@ function addToEventsList(item_) {
     a.appendChild(textNode);
     node.appendChild(a);
 
+    node.style.cursor = "pointer";
+
     node.addEventListener('click', (e) => {
         console.log(cropToGetDocumentId(node.innerText));
         sessionStorage.setItem('event_clicked', cropToGetDocumentId(node.innerText));
