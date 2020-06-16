@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/football.css">
+    <title>Profile</title>
+    <style>
+        #event {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        body {
+            background-image: url('pp4.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        #event td,
+        #event th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #event tr:nth-child(even) {
+            background-color: white;
+        }
+
+        #event tr:hover {
+            background-color: #ddd;
+        }
+
+        #event th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: red;
+            color: white;
+        }
+
+        p {
+            font-size: 20px;
+            color: black;
+            font-family: verdana;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar bg-dark">
+        <h1>
+            <img src="img/logo.png" alt="">
+        </h1>
+        <ul>
+            <div class="text-1">
+                <li><a href="#tab-1-content">Home</a></li>
+                <span class="tooltiptext">Move to homepage</span>
+            </div>
+
+        </ul>
+    </nav>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <table>
+        <tr>
+            <th>
+                <img src="pp.png">
+            </th>
+            <th>
+
+                <p id="name-field">Name : </p>
+                <p id="email-field">Email Id : </p>
+                <p id="uid-field"> Unique Id : </p>
+                <p id="mobile-field"> Mobile Number : </p>
+            </th>
+        </tr>
+    </table>
+    <BR>
+    <BR>
+    <table id="event">
+        <tr>
+            <th>
+                <center>Event</center>
+            </th>
+            <th>
+                <center>Status</center>
+            </th>
+            <th>
+                <center>Unique Id</center>
+            </th>
+
+        </tr>
+        
+
+    </table>
+
+    <!--   Core   -->
+    <script src="./assets/js/plugins/jquery/dist/jquery.min.js"></script>
+    <script src="./assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!--   Optional JS   -->
+    <script src="./assets/js/plugins/chart.js/dist/Chart.min.js"></script>
+    <script src="./assets/js/plugins/chart.js/dist/Chart.extension.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-firestore.js"></script>
+
+    <script>
+
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDI6x9YPQi29j2_MG6Ois7c_uWjWUHftQI",
+            authDomain: "sems-4fbdd.firebaseapp.com",
+            databaseURL: "https://sems-4fbdd.firebaseio.com",
+            projectId: "sems-4fbdd",
+            storageBucket: "sems-4fbdd.appspot.com",
+            messagingSenderId: "522454557418",
+            appId: "1:522454557418:web:b7c652e7764b4299a6ed93"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+    </script>
+
+    <script src="js/userprofile.js"></script>
+
+</body>
+
+</html>

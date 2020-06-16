@@ -1,90 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<style>
-#customers {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="table.css" /> -->
+    <title>Table</title>
 
-#customers td, #customers th {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
+    <style>
+        h2 {
+            text-align: center;
+            color: aquamarine;
+            font-size: 3.8em;
+            font-weight: 100;
+        }
 
-#customers tr:nth-child(even){background-color: #f2f2f2;}
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            border: 2px solid rgb(200, 219, 24);
+        }
 
-#customers tr:hover {background-color: #ddd;}
+        th {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 5px;
+        }
 
-#customers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #4CAF50;
-  color: white;
-}
-</style>
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+            text-align: center;
+            padding: 5px;
+            font-size: 20px;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #dddddd;
+        }
+    </style>
+
 </head>
-<body>
 
-<table id="customers">
-  <tr>
-    <th>Company</th>
-    <th>Contact</th>
-    <th>Country</th>
-  </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-  </tr>
-  <tr>
-    <td>Berglunds snabbköp</td>
-    <td>Christina Berglund</td>
-    <td>Sweden</td>
-  </tr>
-  <tr>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
-    <td>Mexico</td>
-  </tr>
-  <tr>
-    <td>Ernst Handel</td>
-    <td>Roland Mendel</td>
-    <td>Austria</td>
-  </tr>
-  <tr>
-    <td>Island Trading</td>
-    <td>Helen Bennett</td>
-    <td>UK</td>
-  </tr>
-  <tr>
-    <td>Königlich Essen</td>
-    <td>Philip Cramer</td>
-    <td>Germany</td>
-  </tr>
-  <tr>
-    <td>Laughing Bacchus Winecellars</td>
-    <td>Yoshi Tannamuri</td>
-    <td>Canada</td>
-  </tr>
-  <tr>
-    <td>Magazzini Alimentari Riuniti</td>
-    <td>Giovanni Rovelli</td>
-    <td>Italy</td>
-  </tr>
-  <tr>
-    <td>North/South</td>
-    <td>Simon Crowther</td>
-    <td>UK</td>
-  </tr>
-  <tr>
-    <td>Paris spécialités</td>
-    <td>Marie Bertrand</td>
-    <td>France</td>
-  </tr>
-</table>
+<body>
+    <h2>Result</h2>
+
+    <table id="events-table">
+        <tr>
+            <th>Event Name</th>
+            <th>Unique Id</th>
+            <th>Result</th>
+        </tr>
+        
+    </table>
+
+    <br/><br/><br/><br/>
+
+    <table id="result-table">
+        <tr>
+            <th>Student Name</th>
+            <th>Unique Id</th>
+            <th>Mobile</th>
+            <th>RollNo.</th>
+        </tr>
+        
+    </table>    
+
+    <!--   Core   -->
+    <script src="./assets/js/plugins/jquery/dist/jquery.min.js"></script>
+    <script src="./assets/js/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!--   Optional JS   -->
+    <script src="./assets/js/plugins/chart.js/dist/Chart.min.js"></script>
+    <script src="./assets/js/plugins/chart.js/dist/Chart.extension.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-firestore.js"></script>
+
+    <script>
+
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDI6x9YPQi29j2_MG6Ois7c_uWjWUHftQI",
+            authDomain: "sems-4fbdd.firebaseapp.com",
+            databaseURL: "https://sems-4fbdd.firebaseio.com",
+            projectId: "sems-4fbdd",
+            storageBucket: "sems-4fbdd.appspot.com",
+            messagingSenderId: "522454557418",
+            appId: "1:522454557418:web:b7c652e7764b4299a6ed93"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+    </script>
+
+    <script src="js/registeredStudents.js"></script>
+    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"> 
+    </script> 
 
 </body>
+
 </html>
